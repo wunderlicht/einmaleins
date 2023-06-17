@@ -23,11 +23,8 @@ func main() {
 
 	//add tasks to the document
 	for i := 0; i < linesPerPage; i++ {
-		taskText := fmt.Sprintf("%d * %d =", rand.Intn(upperBound+1), rand.Intn(upperBound+1))
-		taskParagraph := doc.AddParagraph()
-		taskParagraph.SetAlign(rtfdoc.AlignLeft)
-		taskParagraph.AddText(taskText, fontSize, font, color)
-		taskParagraph.AddNewLine()
+		taskText := fmt.Sprintf("%d * %d =", rand.Intn(upperBound)+1, rand.Intn(upperBound)+1)
+		addTaskParagraph(doc, taskText)
 	}
 
 	//write it out to a file
@@ -35,4 +32,11 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+}
+
+func addTaskParagraph(doc *rtfdoc.Document, taskText string) {
+	taskParagraph := doc.AddParagraph()
+	taskParagraph.SetAlign(rtfdoc.AlignLeft)
+	taskParagraph.AddText(taskText, fontSize, font, color)
+	taskParagraph.AddNewLine()
 }
