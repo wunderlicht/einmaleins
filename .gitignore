@@ -12,6 +12,9 @@
 *.dylib
 einmaleins
 
+# Ignore program outputs
+einmaleins.rtf
+
 # Test binary, built with `go test -c`
 *.test
 
