@@ -16,7 +16,7 @@ const (
 )
 
 func main() {
-	//setup the document
+	//set up the document
 	doc := rtfdoc.NewDocument()
 	doc.SetFormat(rtfdoc.FormatA4)
 	doc.SetOrientation(rtfdoc.OrientationPortrait)
